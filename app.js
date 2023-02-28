@@ -22,7 +22,8 @@ app.use(express.static("public"));
 //Connect to MongoDB:
 
 
-const url = "mongodb://127.0.0.1:27017/testdb";
+const url = "mongodb+srv://jazbelrose:ciJACVW3UDt8hAkV@cluster0.lienyqa.mongodb.net/todolistDB?retryWrites=true&w=majority";
+
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
