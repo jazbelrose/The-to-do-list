@@ -1,8 +1,11 @@
 // Import the necessary packages:
 
+require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
+
+
 
 // Create an instance of the Express app:
 const app = express();
@@ -22,7 +25,8 @@ app.use(express.static("public"));
 //Connect to MongoDB:
 
 
-const url = "mongodb+srv://jazbelrose:ciJACVW3UDt8hAkV@cluster0.lienyqa.mongodb.net/todolistDB?retryWrites=true&w=majority";
+const url = process.env.DB_CONNECTION_STRING;
+
 
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
